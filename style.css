@@ -1,0 +1,193 @@
+/* ===== VARIÁVEIS & RESET ===== */
+:root {
+  --cor-primaria: #8B5CF6;
+  --cor-secundaria: #EC4899;
+  --cor-fundo: #0F172A;
+  --cor-texto: #F8FAFC;
+  --cor-destaque: #38BDF8;
+  --gradiente-principal: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER DINÂMICO ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  background: var(--gradiente-principal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== SEÇÃO HERO ===== */
+#banner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+#banner::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+  animation: pulse 8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.2); opacity: 0.2; }
+}
+
+/* ===== CARDS DE SERVIÇOS ===== */
+.servico {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.servico:hover {
+  transform: translateY(-5px);
+  background: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 10px 30px rgba(139,92,246,0.2);
+}
+
+/* ===== PORTFÓLIO INTERATIVO ===== */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  aspect-ratio: 16/9;
+}
+
+.portfolio-item img {
+  transition: transform 0.3s ease;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(15,23,42,0.9));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover::after {
+  opacity: 1;
+}
+
+/* ===== FORMULÁRIO MODERNO ===== */
+form input,
+form textarea {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  width: 100%;
+  color: var(--cor-texto);
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.3);
+}
+
+button[type="submit"] {
+  background: var(--gradiente-principal);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* ===== ANIMAÇÕES & RESPONSIVO ===== */
+@media (max-width: 768px) {
+  #banner h1 {
+      font-size: 2.5rem;
+  }
+  
+  .servico {
+      margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.gradient-text {
+  background: var(--gradiente-principal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== EFEITOS ESPECIAIS ===== */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.glass-effect {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
