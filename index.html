@@ -4,44 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DjisanPro | Design & Inovação</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   <style>
-      .gradient-text {
-          background: linear-gradient(45deg, #8B5CF6, #EC4899);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-      }
-      .hover-scale {
-          transition: transform 0.3s ease;
-      }
-      .hover-scale:hover {
-          transform: translateY(-5px);
-      }
+      /* Complementos específicos para Tailwind */
+      .hover-scale { @apply transition-transform duration-300 ease-in-out; }
   </style>
 </head>
 <body class="bg-zinc-900 text-zinc-100 font-sans overflow-x-hidden">
-  <!-- Header Moderno -->
-  <header class="fixed w-full bg-zinc-900/80 backdrop-blur-md z-50">
+  <!-- Header com efeito de scroll -->
+  <header class="fixed w-full z-50">
       <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
           <div class="flex items-center space-x-3">
               <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
-              <span class="text-xl font-bold gradient-text">DjisanPro</span>
+              <span class="logo text-xl font-bold">DjisanPro</span>
           </div>
           <ul class="hidden md:flex space-x-8 items-center">
               <li><a href="#sobre" class="hover:text-purple-400 transition-colors">Sobre</a></li>
               <li><a href="#servicos" class="hover:text-purple-400 transition-colors">Serviços</a></li>
               <li><a href="#portfolio" class="hover:text-purple-400 transition-colors">Portfólio</a></li>
-              <li><a href="#contato" class="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 rounded-full hover:opacity-90 transition-opacity">Contato</a></li>
+              <li><a href="#contato" class="glass-effect px-6 py-2 rounded-full hover:opacity-90">Contato</a></li>
           </ul>
       </nav>
   </header>
 
-  <!-- Seção Hero -->
+  <!-- Seção Hero com animação de pulso -->
   <section id="banner" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
       <div class="max-w-4xl" data-aos="fade-up">
           <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
@@ -61,14 +53,16 @@
       </div>
   </section>
 
-  <!-- Seção Sobre -->
+  <!-- Seção Sobre integrada -->
   <section id="sobre" class="py-20 px-6 bg-zinc-800/20" data-aos="fade-up">
       <div class="container mx-auto max-w-4xl">
           <h2 class="text-4xl font-bold mb-8 gradient-text text-center">Sobre Mim</h2>
           <div class="grid md:grid-cols-2 gap-12 items-center">
               <div class="relative group">
                   <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                  <img src="images/sobre.jpg" alt="DjisanPro" class="w-full h-64 object-cover rounded-2xl hover-scale">
+                  <div class="portfolio-item">
+                      <img src="images/sobre.jpg" alt="DjisanPro" class="w-full h-64 object-cover rounded-2xl hover-scale">
+                  </div>
               </div>
               <div>
                   <p class="text-zinc-400 text-lg leading-relaxed">
@@ -93,12 +87,12 @@
       </div>
   </section>
 
-  <!-- Seção Serviços -->
+  <!-- Seção Serviços otimizada -->
   <section id="servicos" class="py-20 px-6" data-aos="fade-up">
       <div class="container mx-auto max-w-6xl">
           <h2 class="text-4xl font-bold mb-16 gradient-text text-center">Serviços Premium</h2>
           <div class="grid md:grid-cols-3 gap-8">
-              <div class="p-8 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 transition-colors hover-scale">
+              <div class="servico hover-scale">
                   <i data-lucide="palette" class="w-12 h-12 text-purple-400 mb-6"></i>
                   <h3 class="text-2xl font-bold mb-4">Design Estratégico</h3>
                   <p class="text-zinc-400">Identidade visual completa com direção artística e aplicações em múltiplas plataformas</p>
@@ -112,20 +106,20 @@
                   </div>
               </div>
               
-              <!-- Repetir para outros serviços -->
+              <!-- Adicione mais serviços seguindo a mesma estrutura -->
           </div>
       </div>
   </section>
 
-  <!-- Seção Portfólio Interativa -->
+  <!-- Seção Portfólio com efeitos CSS -->
   <section id="portfolio" class="py-20 px-6 bg-zinc-800/20" data-aos="fade-up">
       <div class="container mx-auto max-w-6xl">
           <h2 class="text-4xl font-bold mb-16 gradient-text text-center">Portfólio Criativo</h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="group relative overflow-hidden rounded-2xl hover-scale">
+              <div class="portfolio-item group">
                   <img src="images/projeto1.jpg" alt="Projeto 1" 
-                       class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
-                  <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                      class="w-full h-64 object-cover">
+                  <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
                       <div>
                           <h3 class="text-xl font-bold mb-2">Identidade Visual Tech</h3>
                           <p class="text-zinc-400 text-sm">Sistema de design completo para startup de IA</p>
@@ -135,30 +129,30 @@
                       </div>
                   </div>
               </div>
-              <!-- Adicionar mais projetos -->
+              <!-- Adicione mais projetos -->
           </div>
       </div>
   </section>
 
-  <!-- Seção Contato Avançada -->
+  <!-- Seção Contato com estilos unificados -->
   <section id="contato" class="py-20 px-6" data-aos="fade-up">
       <div class="container mx-auto max-w-4xl">
-          <div class="bg-zinc-800 rounded-2xl p-8 md:p-12">
+          <div class="glass-effect rounded-2xl p-8 md:p-12">
               <h2 class="text-4xl font-bold mb-8 gradient-text text-center">Vamos Criar Juntos</h2>
               <form class="space-y-6">
                   <div class="grid md:grid-cols-2 gap-6">
                       <div>
                           <input type="text" placeholder="Seu Nome" 
-                                 class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all">
+                                  class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
                       </div>
                       <div>
                           <input type="email" placeholder="Seu Email" 
-                                 class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all">
+                                  class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
                       </div>
                   </div>
                   <div>
                       <textarea placeholder="Sua Mensagem" rows="5"
-                                class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"></textarea>
+                              class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"></textarea>
                   </div>
                   <button type="submit" 
                           class="w-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center">
@@ -169,7 +163,7 @@
       </div>
   </section>
 
-  <!-- Footer Moderno -->
+  <!-- Footer atualizado -->
   <footer class="bg-zinc-800/50 py-8 mt-20">
       <div class="container mx-auto px-6">
           <div class="flex flex-col md:flex-row justify-between items-center">
@@ -177,7 +171,7 @@
                   <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                   </svg>
-                  <span class="text-lg font-bold">DjisanPro</span>
+                  <span class="text-lg font-bold gradient-text">DjisanPro</span>
               </div>
               <div class="flex space-x-6">
                   <a href="#" class="text-zinc-400 hover:text-purple-400 transition-colors">
@@ -195,14 +189,16 @@
       </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts atualizados -->
   <script>
-      // Inicialização de bibliotecas
-      AOS.init({
-          duration: 1000,
-          once: true,
-          offset: 120
+      // Controle do header scrolled
+      window.addEventListener('scroll', () => {
+          const header = document.querySelector('header');
+          header.classList.toggle('scrolled', window.scrollY > 50);
       });
+
+      // Inicialização de bibliotecas
+      AOS.init({ duration: 1000, once: true, offset: 120 });
       lucide.createIcons();
   </script>
 </body>
