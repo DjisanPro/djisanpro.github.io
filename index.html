@@ -1,79 +1,209 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Portfólio de DjisanPro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DjisanPro | Design & Inovação</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+      .gradient-text {
+          background: linear-gradient(45deg, #8B5CF6, #EC4899);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+      }
+      .hover-scale {
+          transition: transform 0.3s ease;
+      }
+      .hover-scale:hover {
+          transform: translateY(-5px);
+      }
+  </style>
 </head>
-<body>
-    <header>
-        <div class="logo">DjisanPro</div>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-zinc-900 text-zinc-100 font-sans overflow-x-hidden">
+  <!-- Header Moderno -->
+  <header class="fixed w-full bg-zinc-900/80 backdrop-blur-md z-50">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div class="flex items-center space-x-3">
+              <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span class="text-xl font-bold gradient-text">DjisanPro</span>
+          </div>
+          <ul class="hidden md:flex space-x-8 items-center">
+              <li><a href="#sobre" class="hover:text-purple-400 transition-colors">Sobre</a></li>
+              <li><a href="#servicos" class="hover:text-purple-400 transition-colors">Serviços</a></li>
+              <li><a href="#portfolio" class="hover:text-purple-400 transition-colors">Portfólio</a></li>
+              <li><a href="#contato" class="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 rounded-full hover:opacity-90 transition-opacity">Contato</a></li>
+          </ul>
+      </nav>
+  </header>
 
-    <main>
-        <section id="banner">
-            <h1>Bem-vindo ao meu Portfólio</h1>
-            <p>Designer gráfico e especialista em IA</p>
-        </section>
+  <!-- Seção Hero -->
+  <section id="banner" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+      <div class="max-w-4xl" data-aos="fade-up">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+              Design que Transforma Realidades
+          </h1>
+          <p class="text-xl md:text-2xl text-zinc-400 mb-8">
+              Onde a criatividade humana encontra a precisão da inteligência artificial
+          </p>
+          <div class="flex flex-col md:flex-row justify-center gap-4">
+              <button class="bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-3 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center">
+                  <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>Ver Portfólio
+              </button>
+              <button class="border border-purple-500 px-8 py-3 rounded-full hover:bg-purple-500/10 transition-colors">
+                  Explorar IA
+              </button>
+          </div>
+      </div>
+  </section>
 
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Sou um designer gráfico apaixonado, especializado em estratégias de negócio e soluções em IA.</p>
-        </section>
+  <!-- Seção Sobre -->
+  <section id="sobre" class="py-20 px-6 bg-zinc-800/20" data-aos="fade-up">
+      <div class="container mx-auto max-w-4xl">
+          <h2 class="text-4xl font-bold mb-8 gradient-text text-center">Sobre Mim</h2>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div class="relative group">
+                  <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                  <img src="images/sobre.jpg" alt="DjisanPro" class="w-full h-64 object-cover rounded-2xl hover-scale">
+              </div>
+              <div>
+                  <p class="text-zinc-400 text-lg leading-relaxed">
+                      Com mais de 8 anos de experiência, combino design estratégico com soluções inovadoras em IA para criar impactos reais nos negócios. Minha abordagem integra:
+                  </p>
+                  <ul class="mt-6 space-y-3">
+                      <li class="flex items-center">
+                          <i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-2"></i>
+                          Design centrado na experiência do usuário
+                      </li>
+                      <li class="flex items-center">
+                          <i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-2"></i>
+                          Automação inteligente de processos criativos
+                      </li>
+                      <li class="flex items-center">
+                          <i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-2"></i>
+                          Estratégias de negócio orientadas por dados
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
 
-        <section id="servicos">
-            <h2>Serviços</h2>
-            <div class="servico">
-                <h3>Design Gráfico</h3>
-                <p>Criação de identidades visuais e materiais gráficos.</p>
-            </div>
-            <div class="servico">
-                <h3>Consultoria em IA</h3>
-                <p>Estratégias e implementação de soluções em inteligência artificial.</p>
-            </div>
-            <div class="servico">
-                <h3>Estrategias de Negócios</h3>
-                <p>Consultoria de impacto para potencializar seus negócios.</p>
-            </div>
-        </section>
+  <!-- Seção Serviços -->
+  <section id="servicos" class="py-20 px-6" data-aos="fade-up">
+      <div class="container mx-auto max-w-6xl">
+          <h2 class="text-4xl font-bold mb-16 gradient-text text-center">Serviços Premium</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+              <div class="p-8 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 transition-colors hover-scale">
+                  <i data-lucide="palette" class="w-12 h-12 text-purple-400 mb-6"></i>
+                  <h3 class="text-2xl font-bold mb-4">Design Estratégico</h3>
+                  <p class="text-zinc-400">Identidade visual completa com direção artística e aplicações em múltiplas plataformas</p>
+                  <div class="mt-6 border-t border-zinc-700 pt-4">
+                      <span class="text-purple-400">Inclui:</span>
+                      <ul class="list-disc pl-4 mt-2 text-zinc-400 space-y-2">
+                          <li>Branding completo</li>
+                          <li>Motion Design</li>
+                          <li>UI/UX especializado</li>
+                      </ul>
+                  </div>
+              </div>
+              
+              <!-- Repetir para outros serviços -->
+          </div>
+      </div>
+  </section>
 
-        <section id="portfolio">
-            <h2>Meu Portfólio</h2>
-            <div class="portfolio-item">
-                <img src="images/projeto1.jpg" alt="Projeto 1">
-                <h3>Projeto 1</h3>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/projeto2.jpg" alt="Projeto 2">
-                <h3>Projeto 2</h3>
-            </div>
-            <!-- Adicione mais projetos conforme necessário -->
-        </section>
+  <!-- Seção Portfólio Interativa -->
+  <section id="portfolio" class="py-20 px-6 bg-zinc-800/20" data-aos="fade-up">
+      <div class="container mx-auto max-w-6xl">
+          <h2 class="text-4xl font-bold mb-16 gradient-text text-center">Portfólio Criativo</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="group relative overflow-hidden rounded-2xl hover-scale">
+                  <img src="images/projeto1.jpg" alt="Projeto 1" 
+                       class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div>
+                          <h3 class="text-xl font-bold mb-2">Identidade Visual Tech</h3>
+                          <p class="text-zinc-400 text-sm">Sistema de design completo para startup de IA</p>
+                          <button class="mt-3 text-purple-400 flex items-center">
+                              Ver Case <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <!-- Adicionar mais projetos -->
+          </div>
+      </div>
+  </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <form>
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="Seu Email" required>
-                <textarea placeholder="Sua Mensagem" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+  <!-- Seção Contato Avançada -->
+  <section id="contato" class="py-20 px-6" data-aos="fade-up">
+      <div class="container mx-auto max-w-4xl">
+          <div class="bg-zinc-800 rounded-2xl p-8 md:p-12">
+              <h2 class="text-4xl font-bold mb-8 gradient-text text-center">Vamos Criar Juntos</h2>
+              <form class="space-y-6">
+                  <div class="grid md:grid-cols-2 gap-6">
+                      <div>
+                          <input type="text" placeholder="Seu Nome" 
+                                 class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all">
+                      </div>
+                      <div>
+                          <input type="email" placeholder="Seu Email" 
+                                 class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all">
+                      </div>
+                  </div>
+                  <div>
+                      <textarea placeholder="Sua Mensagem" rows="5"
+                                class="w-full bg-zinc-700/20 border border-zinc-700 rounded-lg px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"></textarea>
+                  </div>
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center">
+                      <i data-lucide="send" class="w-5 h-5 mr-2"></i> Enviar Mensagem
+                  </button>
+              </form>
+          </div>
+      </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 DjisanPro. Todos os direitos reservados.</p>
-    </footer>
+  <!-- Footer Moderno -->
+  <footer class="bg-zinc-800/50 py-8 mt-20">
+      <div class="container mx-auto px-6">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+              <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                  <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                  <span class="text-lg font-bold">DjisanPro</span>
+              </div>
+              <div class="flex space-x-6">
+                  <a href="#" class="text-zinc-400 hover:text-purple-400 transition-colors">
+                      <i data-lucide="github" class="w-6 h-6"></i>
+                  </a>
+                  <a href="#" class="text-zinc-400 hover:text-purple-400 transition-colors">
+                      <i data-lucide="linkedin" class="w-6 h-6"></i>
+                  </a>
+                  <a href="#" class="text-zinc-400 hover:text-purple-400 transition-colors">
+                      <i data-lucide="instagram" class="w-6 h-6"></i>
+                  </a>
+              </div>
+          </div>
+          <p class="text-center text-zinc-400 mt-8">&copy; 2025 DjisanPro. Todos os direitos reservados.</p>
+      </div>
+  </footer>
 
-    <script src="js/script.js"></script>
+  <!-- Scripts -->
+  <script>
+      // Inicialização de bibliotecas
+      AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 120
+      });
+      lucide.createIcons();
+  </script>
 </body>
 </html>
