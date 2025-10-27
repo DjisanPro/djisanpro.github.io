@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Djisan Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Adicione no style.css a classe .light-theme se quiser o toggle de tema funcionar:
+       .light-theme { --bg: #fff; --text: #000; --prim: #00CFFF; /* ajuste outros vars */ } -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="logo">DJISAN PRO</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+      <a class="btn-ghost" href="https://wa.me/258877676995" target="_blank" rel="noopener">Contato</a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="wrap hero-content">
+        <div class="hero-text">
+          <h1>DJISAN PRO</h1>
+          <h2>Design Gráfico e Marketing Digital</h2>
+          <p>Crio identidades visuais, logos, banners, vídeos e soluções criativas que fazem seu negócio vender mais.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://wa.me/258877676995" target="_blank" rel="noopener">Ver Catálogo / Contato</a>
+            <a class="btn-link" href="#portfolio">Ver Portfólio</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="mockup">mockup / animação glow</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about reveal">
+      <div class="wrap grid-2">
+        <div class="about-media">
+          <div class="img">Foto / Ilustração</div>
+        </div>
+        <div class="about-body">
+          <h3>Sobre a DJISAN PRO</h3>
+          <p>A DJISAN PRO transforma ideias em identidade visual, design criativo e marketing digital estratégico. Liderada por Gérson, oferecemos soluções para pequenas e médias empresas que querem crescer e vender mais.</p>
+          <p><strong>Missão:</strong> Entregar design de impacto que gera resultados reais.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services reveal">
+      <div class="wrap">
+        <h3>Serviços</h3>
+        <p class="muted">Soluções pensadas para destacar sua marca</p>
+        <div class="services-grid">
+          <article class="card">
+            <div class="card-icon">🖋️</div>
+            <h4>Logotipo Profissional</h4>
+            <p>Criação de logotipos exclusivos e memoráveis para marcas de todos os tamanhos.</p>
+            <a class="card-cta" href="https://wa.me/258877676995?text=Quero%20um%20logotipo%20profissional" target="_blank">Quero este serviço</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎨</div>
+            <h4>Identidade Visual Completa</h4>
+            <p>Pacote completo de marca: cores, tipografia, padrões e aplicações visuais.</p>
+            <a class="card-cta" href="https://wa.me/258877676995?text=Quero%20uma%20identidade%20visual" target="_blank">Quero este serviço</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📱</div>
+            <h4>Banners e Posts para Redes Sociais</h4>
+            <p>Design estratégico para posts e banners que vendem e engajam.</p>
+            <a class="card-cta" href="https://wa.me/258877676995?text=Quero%20posts%20para%20redes%20sociais" target="_blank">Quero este serviço</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💳</div>
+            <h4>Cartões de Visita & Convites</h4>
+            <p>Materiais impressos que fortalecem sua presença profissional.</p>
+            <a class="card-cta" href="https://wa.me/258877676995?text=Quero%20cartoes%20ou%20convites" target="_blank">Quero este serviço</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📸</div>
+            <h4>Mockups Profissionais</h4>
+            <p>Visualização realista de projetos e produtos para apresentação ou portfólio.</p>
+            <a class="card-cta" href="https://wa.me/258877676995?text=Quero%20mockups%20profissionais" target="_blank">Quero este serviço</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎬</div>
+            <h4>Edição de Vídeo e Motion Design</h4>
+            <p>Vídeos curtos, reels e motion graphics para campanhas digitais e apresentações.</p>
+            <a class="card-cta" href="https://wa.me/258877676995?text=Quero%20edição%20de%20video" target="_blank">Quero este serviço</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio reveal">
+      <div class="wrap">
+        <h3>Portfólio</h3>
+        <p class="muted">Veja alguns dos trabalhos que desenvolvemos para clientes reais.</p>
+        <div class="gallery">
+          <figure class="tile">
+            <img src=".imagens/logo.jpeg" alt="Logo para cliente X" />
+            <figcaption>Logo para cliente M6 Photographic</figcaption>
+          </figure>
+          <figure class="tile">
+            <img src=".imagens/banner.png" alt="Banner promocional Y" />
+            <figcaption>Banner promocional de Produtos para anuncios com diversos tamanhosY</figcaption>
+          </figure>
+          <figure class="tile">
+            <img src=".imagens/cartoes-1.png" alt="Identidade visual Z" />
+            <figcaption>Cartoes de Visita para Marcas Pessoais, ou empresa fde grande porte</figcaption>
+          </figure>
+        </div>
+        <div class="center">
+          <a class="btn-primary" href="https://wa.me/258877676995" target="_blank">Ver mais / Contato</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact reveal">
+      <div class="wrap grid-2">
+        <div>
+          <h3>Vamos Conversar?</h3>
+          <p>Solicite orçamento ou fale sobre seu projeto. Estamos prontos para transformar sua marca.</p>
+          <ul class="contact-info">
+            <li>Email: <a href="mailto:djisanpro@gmail.com">djisanpro@gmail.com</a></li>
+            <li>WhatsApp: <a href="https://wa.me/258877676995" target="_blank">+258 87 76 76 995</a></li>
+          </ul>
+          <p class="muted">Ou envie uma mensagem rápida via WhatsApp.</p>
+        </div>
+        <form class="contact-form" action="https://wa.me/258877676995" method="get">
+          <label><input name="name" type="text" placeholder="Nome" required></label>
+          <label><input name="email" type="email" placeholder="Email" required></label>
+          <label><textarea name="message" rows="5" placeholder="Mensagem" required></textarea></label>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Enviar Mensagem</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="logo">DJISAN PRO</div>
+        <p class="muted">© 2025 DJISAN PRO — Todos os direitos reservados</p>
+      </div>
+      <nav>
+        <h5>Links Rápidos</h5>
+        <ul class="footer-links">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h5>Redes</h5>
+        <ul class="social">
+          <li><a href="https://facebook.com/djisanpro" target="_blank">Facebook</a></li>
+          <li><a href="https://tiktok.com/@djisanpro" target="_blank">TikTok</a></li>
+          <li><a href="https://instagram.com/djisanpro" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
