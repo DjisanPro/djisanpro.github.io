@@ -1,0 +1,445 @@
+/* style.css - usado por index.html na mesma pasta
+  Fontes e variáveis */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  --prim: #00CFFF;
+  --bg: #121212;
+  --text: #E0E0E0;
+  --glow: rgba(0, 207, 255, 0.15);
+  --muted: rgba(224, 224, 224, 0.65);
+  --radius: 12px;
+}
+
+/* Tema claro (suporte para toggle no main.js) */
+.light-theme {
+  --bg: #ffffff;
+  --text: #121212;
+  --muted: rgba(0, 0, 0, 0.65);
+  /* Ajuste outros vars para harmonia no tema claro */
+  --prim: #00CFFF; /* Mantém a cor principal */
+  --glow: rgba(0, 207, 255, 0.1); /* Suaviza o glow no tema claro */
+}
+
+/* Reset e base */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s; /* Transição suave entre temas */
+}
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.6));
+  backdrop-filter: blur(6px);
+  transition: background 0.3s; /* Suaviza mudança de tema */
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  color: var(--prim);
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.nav {
+  margin-left: auto;
+}
+.nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav a {
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.18s ease;
+}
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 12px var(--glow);
+  color: var(--prim); /* Destaque no hover */
+}
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--prim);
+  display: inline-block;
+  margin-left: 12px;
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 120px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 300px at 10% 20%, rgba(0, 207, 255, 0.06), transparent),
+              radial-gradient(500px 250px at 90% 80%, rgba(0, 207, 255, 0.04), transparent);
+  transform: translateZ(0);
+  pointer-events: none;
+  transition: background 0.3s;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.hero-text {
+  flex: 1;
+}
+.hero-text h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 48px;
+  margin: 0;
+  color: var(--prim);
+  text-shadow: 0 6px 28px rgba(0, 207, 255, 0.06);
+  transition: color 0.3s;
+}
+.hero-text h2 {
+  margin: 6px 0 14px;
+  font-size: 20px;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.hero-text p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--prim), #32e6ff);
+  color: #041017;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(0, 207, 255, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 207, 255, 0.18);
+}
+.btn-link {
+  align-self: center;
+  color: var(--muted);
+  padding: 10px;
+  transition: color 0.3s;
+}
+.btn-link:hover {
+  color: var(--prim);
+  text-decoration: underline;
+}
+.hero-art {
+  width: 320px;
+  min-width: 240px;
+}
+
+/* mockup: usa imagem 'banner' se existir na pasta */
+.mockup {
+  height: 220px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 207, 255, 0.06), rgba(255, 255, 255, 0.02)),
+              url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+.mockup:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 207, 255, 0.1);
+}
+
+/* Sections */
+.section {
+  padding: 48px 0;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: center;
+}
+.about-media .avatar {
+  height: 260px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  background-image: url("manual_identidade.jpg"); /* Corrigido o espaço no nome */
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease;
+}
+.about-media .avatar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 207, 255, 0.1);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 207, 255, 0.06);
+}
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+.card-icon:hover {
+  color: var(--prim);
+}
+.card-cta {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--prim);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.card-cta:hover {
+  color: #32e6ff;
+  text-decoration: underline;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.tile {
+  width: calc(33.333% - 8px);
+  background: #0f0f0f;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 207, 255, 0.1);
+}
+.tile img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(10%);
+  transition: filter 0.3s ease;
+}
+.tile img:hover {
+  filter: grayscale(0%);
+}
+.tile figcaption {
+  padding: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+.tile figcaption:hover {
+  color: var(--text);
+}
+.center {
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* Se não houver imagens <img>, usa estas imagens (nomes fornecidos) como fallback de background */
+.tile:nth-child(1) {
+  background-image: url("card.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.tile:nth-child(2) {
+  background-image: url("card001.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.tile:nth-child(3) {
+  background-image: url("cartoes-1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  background: #0e0e0e;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  outline: none;
+  transition: background 0.3s, border-color 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: #1a1a1a;
+  border-color: rgba(0, 207, 255, 0.2);
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 28px 0;
+  margin-top: 28px;
+  transition: border-color 0.3s;
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+.footer-links,
+.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li,
+.social li {
+  margin: 6px 0;
+  transition: color 0.3s;
+}
+.footer-links li a:hover,
+.social li a:hover {
+  color: var(--prim);
+}
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .nav ul {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+    margin-left: 10px;
+  }
+  .tile {
+    width: calc(50% - 6px);
+  }
+}
+@media (max-width: 480px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  .hero-art {
+    width: 100%;
+  }
+  .tile {
+    width: 100%;
+  }
+  .hero-text h1 {
+    font-size: 36px; /* Ajuste para telas menores */
+  }
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Pequenas melhorias opcionais: hidrate nomes de arquivos adicionais (coloque a extensão correta se necessário) */
+/* - "Flyer Redes Sociais" -> Exemplo: url("Flyer Redes Sociais.jpg") */
+/* - "poster", "social_media", "social_media01", "vidio-promo", "logo", "logo001", "logo01" */
+/* Descomente e ajuste a extensão se quiser usar: */
+/* .some-class { background-image: url("Flyer Redes Sociais.jpg"); } */
+
+/* Comentário de última atualização */
+@media (min-width: 0px) {
+  /* Atualizado em 27/10/2025, 13:46 CAT por Grok/xAI */
+}
